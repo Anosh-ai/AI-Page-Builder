@@ -16,22 +16,22 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-3.5 py-1.5 text-xs font-medium text-cyan-300 backdrop-blur-sm">
+              <span className="inline-flex items-center gap-1.5 rounded-full border border-cyan-200 bg-cyan-50 px-3.5 py-1.5 text-xs font-medium text-cyan-700 backdrop-blur-sm">
                 <span className="relative flex h-1.5 w-1.5">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-60" />
-                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-400" />
+                  <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-cyan-500" />
                 </span>
                 AI Website Builder
               </span>
             </motion.div>
 
-            <TypewriterHeadline className="font-display mt-5 text-3xl font-extrabold tracking-tight text-white sm:text-4xl lg:text-5xl lg:leading-[1.08]" />
+            <TypewriterHeadline className="font-display mt-5 text-3xl font-extrabold tracking-tight text-[var(--color-ink)] sm:text-4xl lg:text-5xl lg:leading-[1.08]" />
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
-              className="mx-auto mt-4 max-w-md text-base leading-relaxed text-zinc-400 sm:text-lg lg:mx-0"
+              className="mx-auto mt-4 max-w-md text-base leading-relaxed text-[var(--color-ink-secondary)] sm:text-lg lg:mx-0"
             >
               Create beautiful, responsive, production-ready websites in minutes using AI.
               Simply describe your idea, customize visually, and publish instantly.
@@ -55,9 +55,9 @@ export function Hero() {
               <Button
                 size="lg"
                 variant="outline"
-                className="w-full border-white/15 bg-white/5 text-zinc-200 hover:border-cyan-400/40 hover:bg-white/10 hover:text-white sm:w-auto"
+                className="w-full border-[var(--color-border)] bg-[var(--color-surface-1)] text-[var(--color-ink-secondary)] hover:border-cyan-300 hover:bg-cyan-50/50 hover:text-cyan-700 sm:w-auto"
               >
-                <svg className="h-4 w-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
+                <svg className="h-4 w-4 text-cyan-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.75}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 010 1.972l-11.54 6.347a1.125 1.125 0 01-1.667-.986V5.653z" />
                 </svg>
                 Watch Demo

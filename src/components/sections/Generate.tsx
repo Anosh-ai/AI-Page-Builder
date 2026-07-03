@@ -132,7 +132,7 @@ export function Generate() {
 
         <div className="mx-auto mt-10 grid max-w-5xl items-stretch gap-6 lg:grid-cols-2">
           {/* Prompt panel */}
-          <div className="surface-card glow-brand flex h-full flex-col rounded-2xl p-5 sm:p-6">
+          <div className="surface-card glow-brand flex h-[500px] flex-col rounded-2xl p-5 sm:p-6">
             <div className="flex items-center justify-between">
               <label className="text-xs font-semibold tracking-wide text-cyan-600 uppercase">
                 Your prompt
@@ -144,10 +144,10 @@ export function Generate() {
                 </span>
               )}
             </div>
-            <div className="relative mt-3">
+            <div className="relative mt-3 min-h-[128px] flex-1">
               {autoEnabled && isTyping && status === 'idle' ? (
                 <div
-                  className="min-h-[106px] w-full cursor-text rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-2)] p-4 text-sm leading-relaxed text-[var(--color-ink)]"
+                  className="absolute inset-0 h-full w-full cursor-text overflow-hidden rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-2)] p-4 text-sm leading-relaxed text-[var(--color-ink)]"
                   onClick={handlePromptFocus}
                   onFocus={handlePromptFocus}
                   tabIndex={0}
@@ -166,14 +166,13 @@ export function Generate() {
                     setPrompt(e.target.value)
                   }}
                   onFocus={handlePromptFocus}
-                  rows={4}
                   placeholder="Describe the website you want to build..."
-                  className="w-full resize-none rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-2)] p-4 text-sm text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)] transition-all duration-200 focus:border-cyan-400 focus:ring-4 focus:ring-cyan-500/10 focus:outline-none"
+                  className="absolute inset-0 h-full w-full resize-none rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-2)] p-4 text-sm leading-relaxed text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)] transition-all duration-200 focus:border-cyan-400 focus:ring-4 focus:ring-cyan-500/10 focus:outline-none"
                 />
               )}
             </div>
 
-            <div className="mt-3 flex flex-wrap gap-2">
+            <div className="mt-3 flex shrink-0 flex-wrap gap-2">
               {starterPrompts.map((sp) => (
                 <button
                   key={sp}
@@ -196,7 +195,7 @@ export function Generate() {
               type="button"
               onClick={handleManualGenerate}
               disabled={status === 'generating'}
-              className="mt-auto inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 text-sm font-semibold text-[#0a1628] shadow-[0_8px_30px_rgba(34,211,238,0.35)] transition-all hover:from-cyan-300 hover:to-cyan-400 disabled:opacity-70"
+              className="mt-4 inline-flex h-12 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 text-sm font-semibold text-[#0a1628] shadow-[0_8px_30px_rgba(34,211,238,0.35)] transition-all hover:from-cyan-300 hover:to-cyan-400 disabled:opacity-70"
             >
               {status === 'generating' ? (
                 <>

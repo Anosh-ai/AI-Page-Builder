@@ -24,7 +24,8 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const onDark = !scrolled
+  // Hero is light now, so the navbar always uses light-on-light styling.
+  const onDark = false
 
   return (
     <motion.header

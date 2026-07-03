@@ -7,16 +7,24 @@ export function FinalCTA() {
     <section className="section-padding-sm">
       <Container>
         <FadeUp>
-          <div className="relative overflow-hidden rounded-3xl border border-cyan-400/20 bg-[#0a1628] px-6 py-16 text-center sm:px-12 sm:py-20">
-            <div className="absolute inset-0 mesh-gradient opacity-60" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(34,211,238,0.3),transparent_60%)]" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.18),transparent_60%)]" />
+          <div className="relative overflow-hidden rounded-3xl border border-[var(--color-border-subtle)] bg-white px-6 py-16 text-center shadow-[0_24px_64px_rgba(15,20,25,0.08)] sm:px-12 sm:py-20">
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-50/80 via-white to-sky-50/60" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(34,211,238,0.12),transparent_55%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(6,182,212,0.08),transparent_55%)]" />
+            <div
+              className="pointer-events-none absolute inset-0 opacity-[0.35]"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle, rgba(34,211,238,0.15) 1px, transparent 1px)',
+                backgroundSize: '24px 24px',
+              }}
+            />
 
             <div className="relative">
-              <h2 className="font-display text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+              <h2 className="font-display text-3xl font-bold tracking-tight text-[var(--color-ink)] sm:text-4xl lg:text-5xl">
                 Ready to build the future?
               </h2>
-              <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-zinc-400 sm:text-lg">
+              <p className="mx-auto mt-4 max-w-lg text-base leading-relaxed text-[var(--color-ink-secondary)] sm:text-lg">
                 Start creating with Coder-Z today. No setup, no learning curve — just
                 describe what you want and watch it happen.
               </p>
@@ -33,12 +41,12 @@ export function FinalCTA() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-zinc-700 bg-transparent text-zinc-300 hover:border-zinc-500 hover:bg-zinc-800/50 hover:text-white"
+                  className="border-[var(--color-border)] bg-[var(--color-surface-1)] text-[var(--color-ink-secondary)] hover:border-cyan-300 hover:bg-cyan-50/50 hover:text-cyan-700"
                 >
                   View Demo
                 </Button>
               </div>
-              <p className="mt-6 text-sm text-zinc-500">
+              <p className="mt-6 text-sm text-[var(--color-ink-muted)]">
                 Free forever for personal projects · No credit card required
               </p>
             </div>

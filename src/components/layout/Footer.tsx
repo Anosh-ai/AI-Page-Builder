@@ -44,7 +44,7 @@ const socials = [
 function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) {
   return (
     <div>
-      <h4 className="mb-4 text-xs font-semibold tracking-[0.12em] text-cyan-400/80 uppercase">
+      <h4 className="mb-4 text-xs font-semibold tracking-[0.12em] text-cyan-600 uppercase">
         {title}
       </h4>
       <ul className="space-y-2.5">
@@ -52,7 +52,7 @@ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) 
           <li key={link.label}>
             <a
               href={link.href}
-              className="text-sm text-zinc-400 transition-colors duration-200 hover:text-white"
+              className="text-sm text-[var(--color-ink-secondary)] transition-colors duration-200 hover:text-cyan-700"
             >
               {link.label}
             </a>
@@ -65,36 +65,31 @@ function FooterColumn({ title, links }: { title: string; links: FooterLink[] }) 
 
 export function Footer() {
   return (
-    <footer
-      className="relative overflow-hidden border-t border-cyan-400/10"
-      style={{
-        background: 'linear-gradient(180deg, #0d2137 0%, #0a1628 45%, #030712 100%)',
-      }}
-    >
+    <footer className="relative overflow-hidden border-t border-[var(--color-border-subtle)] bg-gradient-to-b from-slate-50/80 via-white to-[var(--color-surface-2)]">
       {/* ambient glow */}
-      <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-[100px]" />
+      <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[600px] -translate-x-1/2 rounded-full bg-cyan-400/8 blur-[100px]" />
       <div
-        className="pointer-events-none absolute inset-0 opacity-[0.04]"
+        className="pointer-events-none absolute inset-0 opacity-[0.25]"
         style={{
           backgroundImage:
-            'linear-gradient(#22d3ee 1px, transparent 1px), linear-gradient(90deg, #22d3ee 1px, transparent 1px)',
-          backgroundSize: '48px 48px',
+            'radial-gradient(circle, rgba(34,211,238,0.12) 1px, transparent 1px)',
+          backgroundSize: '32px 32px',
         }}
       />
 
       <Container className="relative py-16">
         {/* CTA + newsletter row */}
-        <div className="flex flex-col items-start justify-between gap-8 border-b border-white/5 pb-12 lg:flex-row lg:items-center">
+        <div className="flex flex-col items-start justify-between gap-8 border-b border-[var(--color-border-subtle)] pb-12 lg:flex-row lg:items-center">
           <div className="max-w-md">
-            <Logo textClassName="text-white" />
-            <p className="mt-4 text-sm leading-relaxed text-zinc-400">
+            <Logo textClassName="text-[var(--color-ink)]" />
+            <p className="mt-4 text-sm leading-relaxed text-[var(--color-ink-secondary)]">
               The AI website builder that turns ideas into production-ready sites —
               drag, drop, generate, and ship in minutes.
             </p>
           </div>
 
           <div className="w-full max-w-sm">
-            <p className="mb-2 text-sm font-medium text-white">Stay in the loop</p>
+            <p className="mb-2 text-sm font-medium text-[var(--color-ink)]">Stay in the loop</p>
             <form
               className="flex gap-2"
               onSubmit={(e) => e.preventDefault()}
@@ -102,11 +97,11 @@ export function Footer() {
               <input
                 type="email"
                 placeholder="you@company.com"
-                className="h-11 flex-1 rounded-xl border border-white/10 bg-white/5 px-4 text-sm text-white placeholder:text-zinc-500 transition-all focus:border-cyan-400/50 focus:ring-4 focus:ring-cyan-500/10 focus:outline-none"
+                className="h-11 flex-1 rounded-xl border border-[var(--color-border)] bg-white px-4 text-sm text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)] transition-all focus:border-cyan-400/60 focus:ring-4 focus:ring-cyan-500/10 focus:outline-none"
               />
               <button
                 type="submit"
-                className="h-11 shrink-0 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 px-5 text-sm font-semibold text-[#0a1628] shadow-[0_4px_20px_rgba(34,211,238,0.3)] transition-all hover:from-cyan-300 hover:to-cyan-400"
+                className="h-11 shrink-0 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 px-5 text-sm font-semibold text-[#0a1628] shadow-[0_4px_20px_rgba(34,211,238,0.25)] transition-all hover:from-cyan-300 hover:to-cyan-400"
               >
                 Subscribe
               </button>
@@ -122,8 +117,8 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 sm:flex-row">
-          <p className="text-sm text-zinc-500">
+        <div className="flex flex-col items-center justify-between gap-4 border-t border-[var(--color-border-subtle)] pt-8 sm:flex-row">
+          <p className="text-sm text-[var(--color-ink-muted)]">
             &copy; {new Date().getFullYear()} Coder-Z. All rights reserved.
           </p>
           <div className="flex items-center gap-3">
@@ -132,7 +127,7 @@ export function Footer() {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-white/10 bg-white/5 text-zinc-400 transition-all duration-200 hover:border-cyan-400/40 hover:bg-cyan-400/10 hover:text-cyan-300"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-[var(--color-border)] bg-white text-[var(--color-ink-secondary)] transition-all duration-200 hover:border-cyan-300 hover:bg-cyan-50 hover:text-cyan-600"
               >
                 <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
                   <path d={social.path} />
