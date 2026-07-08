@@ -1,5 +1,5 @@
 import { FadeUp } from '../ui/FadeUp'
-import { Card } from '../ui/Card'
+import { TestimonialCard } from '../ui/TestimonialCard'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
 import type { Testimonial } from '../../types'
@@ -34,63 +34,27 @@ const testimonials: Testimonial[] = [
   },
 ]
 
-const logos = ['Vercel', 'Stripe', 'Linear', 'Notion', 'Figma', 'Supabase']
-
-function StarRating() {
-  return (
-    <div className="flex gap-0.5">
-      {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} className="h-3.5 w-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
-      ))}
-    </div>
-  )
-}
-
 export function Testimonials() {
   return (
     <section id="testimonials" className="section-padding">
       <Container>
         <SectionHeading
+          animated
           label="Testimonials"
           title="Loved by builders worldwide"
           description="Join thousands of developers, designers, and founders who ship faster with Coder-Z."
         />
 
-        <FadeUp delay={0.1}>
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-x-12 gap-y-4">
-            {logos.map((logo) => (
-              <span
-                key={logo}
-                className="text-xs font-semibold tracking-[0.15em] text-[var(--color-ink-faint)] uppercase"
-              >
-                {logo}
-              </span>
-            ))}
-          </div>
-        </FadeUp>
-
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
           {testimonials.map((item, i) => (
             <FadeUp key={item.id} delay={i * 0.08}>
-              <Card variant="elevated" className="flex h-full flex-col">
-                <StarRating />
-                <blockquote className="mt-4 flex-1 text-sm leading-relaxed text-[var(--color-ink-secondary)]">
-                  &ldquo;{item.quote}&rdquo;
-                </blockquote>
-                <div className="mt-6 flex items-center gap-3 border-t border-[var(--color-border-subtle)] pt-5">
-                  <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--color-ink)] text-[10px] font-bold text-white">
-                    {item.avatar}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-[var(--color-ink)]">{item.author}</p>
-                    <p className="text-xs text-[var(--color-ink-muted)]">
-                      {item.role}, {item.company}
-                    </p>
-                  </div>
-                </div>
-              </Card>
+              <TestimonialCard
+                quote={item.quote}
+                author={item.author}
+                role={item.role}
+                company={item.company}
+                avatar={item.avatar}
+              />
             </FadeUp>
           ))}
         </div>

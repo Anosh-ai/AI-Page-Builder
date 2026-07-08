@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react'
+
 export interface Feature {
   id: string
   title: string
@@ -17,6 +19,24 @@ export interface Testimonial {
 export interface NavLink {
   label: string
   href: string
+}
+
+export interface MegaMenuItem {
+  title: string
+  description: string
+  href: string
+  icon: ReactNode
+}
+
+export interface MegaMenuSection {
+  id: string
+  label: string
+  items: MegaMenuItem[]
+  featured?: {
+    title: string
+    description: string
+    href: string
+  }
 }
 
 export interface FooterLink {

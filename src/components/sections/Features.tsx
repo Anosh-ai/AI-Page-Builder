@@ -1,5 +1,5 @@
 import { FadeUp } from '../ui/FadeUp'
-import { Card } from '../ui/Card'
+import { FeatureCard } from '../ui/FeatureCard'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
 import type { Feature } from '../../types'
@@ -87,25 +87,20 @@ export function Features() {
     <section id="features" className="section-padding">
       <Container>
         <SectionHeading
+          animated
           label="Features"
           title="Everything you need to ship faster"
           description="From idea to production in one seamless workflow. No boilerplate, no complexity — just results."
         />
 
-        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, i) => (
             <FadeUp key={feature.id} delay={i * 0.06}>
-              <Card className="group h-full">
-                <div className="mb-5 flex h-10 w-10 items-center justify-center rounded-xl border border-cyan-100 bg-cyan-50 text-cyan-600 transition-colors duration-300 group-hover:border-cyan-200 group-hover:bg-cyan-100">
-                  {iconMap[feature.icon]}
-                </div>
-                <h3 className="font-display text-base font-semibold text-[var(--color-ink)]">
-                  {feature.title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-secondary)]">
-                  {feature.description}
-                </p>
-              </Card>
+              <FeatureCard
+                title={feature.title}
+                description={feature.description}
+                icon={iconMap[feature.icon]}
+              />
             </FadeUp>
           ))}
         </div>

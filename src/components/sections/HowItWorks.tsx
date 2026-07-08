@@ -1,4 +1,5 @@
 import { FadeUp } from '../ui/FadeUp'
+import { StepCard } from '../ui/StepCard'
 import { Container } from '../ui/Container'
 import { SectionHeading } from '../ui/SectionHeading'
 
@@ -43,29 +44,24 @@ export function HowItWorks() {
     <section id="how-it-works" className="section-padding">
       <Container>
         <SectionHeading
+          animated
           label="How it works"
           title="From prompt to production in three steps"
           description="No setup, no config files, no waiting. Just describe, generate, and ship."
         />
 
-        <div className="relative mt-10">
-          <div className="absolute top-12 right-0 left-0 hidden h-px bg-gradient-to-r from-transparent via-[var(--color-border)] to-transparent lg:block" />
+        <div className="relative mt-12">
+          <div className="absolute top-[3.25rem] right-8 left-8 hidden h-px bg-gradient-to-r from-transparent via-sky-200 to-transparent lg:block" />
 
-          <div className="grid gap-8 lg:grid-cols-3 lg:gap-6">
+          <div className="grid gap-5 lg:grid-cols-3">
             {steps.map((item, i) => (
               <FadeUp key={item.step} delay={i * 0.1}>
-                <div className="relative flex flex-col items-center text-center lg:items-start lg:text-left">
-                  <div className="relative z-10 mb-6 flex h-12 w-12 items-center justify-center rounded-2xl border border-cyan-200 bg-cyan-50 text-cyan-600 shadow-[var(--shadow-sm)]">
-                    {item.icon}
-                  </div>
-                  <span className="label-overline mb-2">{item.step}</span>
-                  <h3 className="font-display text-lg font-semibold text-[var(--color-ink)]">
-                    {item.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-[var(--color-ink-secondary)]">
-                    {item.description}
-                  </p>
-                </div>
+                <StepCard
+                  step={item.step}
+                  title={item.title}
+                  description={item.description}
+                  icon={item.icon}
+                />
               </FadeUp>
             ))}
           </div>

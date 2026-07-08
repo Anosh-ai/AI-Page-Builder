@@ -11,7 +11,7 @@ export function Hero3D() {
       aria-hidden
     >
       {/* ambient glow */}
-      <div className="pointer-events-none absolute left-1/2 top-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/20 blur-[90px]" />
+      <div className="pointer-events-none absolute top-1/2 left-1/2 h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-cyan-400/20 blur-[90px]" />
 
       <div className="scene3d-stage absolute inset-0">
         {/* perspective grid floor */}

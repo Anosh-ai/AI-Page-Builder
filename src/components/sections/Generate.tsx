@@ -125,6 +125,7 @@ export function Generate() {
     <section id="generate" className="section-padding">
       <Container>
         <SectionHeading
+          animated
           label="AI Generator"
           title="Describe it. Watch it build."
           description="Type your idea in plain language and Coder-Z drafts a complete, responsive page — hero, features, and CTAs included."
@@ -134,12 +135,12 @@ export function Generate() {
           {/* Prompt panel */}
           <div className="surface-card glow-brand flex h-[500px] flex-col rounded-2xl p-5 sm:p-6">
             <div className="flex items-center justify-between">
-              <label className="text-xs font-semibold tracking-wide text-cyan-600 uppercase">
+              <label className="text-xs font-semibold tracking-wide text-sky-600 uppercase">
                 Your prompt
               </label>
               {autoEnabled && isTyping && status === 'idle' && (
-                <span className="flex items-center gap-1.5 text-[10px] font-medium text-cyan-600">
-                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-cyan-400" />
+                <span className="flex items-center gap-1.5 text-[10px] font-medium text-sky-600">
+                  <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sky-400" />
                   Auto-writing…
                 </span>
               )}
@@ -167,7 +168,7 @@ export function Generate() {
                   }}
                   onFocus={handlePromptFocus}
                   placeholder="Describe the website you want to build..."
-                  className="absolute inset-0 h-full w-full resize-none rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-2)] p-4 text-sm leading-relaxed text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)] transition-all duration-200 focus:border-cyan-400 focus:ring-4 focus:ring-cyan-500/10 focus:outline-none"
+                  className="absolute inset-0 h-full w-full resize-none rounded-xl border border-[var(--color-border)] bg-[var(--color-surface-2)] p-4 text-sm leading-relaxed text-[var(--color-ink)] placeholder:text-[var(--color-ink-muted)] transition-all duration-200 focus:border-sky-400 focus:ring-4 focus:ring-sky-500/10 focus:outline-none"
                 />
               )}
             </div>
@@ -182,7 +183,7 @@ export function Generate() {
                     setIsTyping(false)
                     setPrompt(sp)
                   }}
-                  className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface-1)] px-3 py-1.5 text-xs font-medium text-[var(--color-ink-muted)] transition-all duration-200 hover:border-cyan-300 hover:text-cyan-600"
+                  className="rounded-full border border-[var(--color-border)] bg-[var(--color-surface-1)] px-3 py-1.5 text-xs font-medium text-[var(--color-ink-muted)] transition-all duration-200 hover:border-sky-300 hover:text-sky-600"
                 >
                   {sp.length > 34 ? `${sp.slice(0, 34)}…` : sp}
                 </button>
@@ -195,7 +196,7 @@ export function Generate() {
               type="button"
               onClick={handleManualGenerate}
               disabled={status === 'generating'}
-              className="mt-4 inline-flex h-12 w-full shrink-0 items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-cyan-400 to-cyan-500 text-sm font-semibold text-[#0a1628] shadow-[0_8px_30px_rgba(34,211,238,0.35)] transition-all hover:from-cyan-300 hover:to-cyan-400 disabled:opacity-70"
+              className="mt-4 inline-flex h-12 w-full shrink-0 items-center justify-center gap-2 rounded-full bg-[#22d3ee] text-sm font-semibold text-white shadow-[0_8px_24px_rgba(34,211,238,0.35)] transition-all hover:bg-[#06b6d4] disabled:opacity-70"
             >
               {status === 'generating' ? (
                 <>

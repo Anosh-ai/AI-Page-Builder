@@ -1,4 +1,4 @@
-/* 3D hero scene — cyan themed */
+/* 3D hero scene — cyan themed (classic look) */
 .scene3d {
   perspective: 1400px;
   perspective-origin: 50% 40%;
@@ -11,7 +11,8 @@
 }
 
 @keyframes stageFloat {
-  0%, 100% {
+  0%,
+  100% {
     transform: rotateX(18deg) rotateY(-22deg) rotateZ(4deg) translateY(0);
   }
   50% {
@@ -23,8 +24,11 @@
   position: absolute;
   border-radius: 20px;
   border: 1px solid rgba(34, 211, 238, 0.25);
-  background:
-    linear-gradient(145deg, rgba(255, 255, 255, 0.9) 0%, rgba(236, 254, 255, 0.75) 100%);
+  background: linear-gradient(
+    145deg,
+    rgba(255, 255, 255, 0.9) 0%,
+    rgba(236, 254, 255, 0.75) 100%
+  );
   box-shadow:
     0 30px 60px -20px rgba(6, 30, 55, 0.45),
     0 0 0 1px rgba(255, 255, 255, 0.6) inset,
@@ -56,8 +60,13 @@
 .orb3d {
   position: absolute;
   border-radius: 9999px;
-  background:
-    radial-gradient(circle at 30% 25%, #a5f3fc 0%, #22d3ee 35%, #0891b2 70%, #0e2a45 100%);
+  background: radial-gradient(
+    circle at 30% 25%,
+    #a5f3fc 0%,
+    #22d3ee 35%,
+    #0891b2 70%,
+    #0e2a45 100%
+  );
   box-shadow:
     0 30px 60px -12px rgba(8, 145, 178, 0.5),
     0 0 60px rgba(34, 211, 238, 0.45),
@@ -68,24 +77,36 @@
 .floaty {
   animation: floaty 6s ease-in-out infinite;
 }
-.floaty-2 { animation: floaty 7.5s ease-in-out infinite; animation-delay: -1s; }
-.floaty-3 { animation: floaty 8.5s ease-in-out infinite; animation-delay: -2.5s; }
+.floaty-2 {
+  animation: floaty 7.5s ease-in-out infinite;
+  animation-delay: -1s;
+}
+.floaty-3 {
+  animation: floaty 8.5s ease-in-out infinite;
+  animation-delay: -2.5s;
+}
 
 @keyframes floaty {
-  0%, 100% { transform: translateZ(var(--z, 0)) translateY(0); }
-  50% { transform: translateZ(var(--z, 0)) translateY(-16px); }
+  0%,
+  100% {
+    transform: translateZ(var(--z, 0)) translateY(0);
+  }
+  50% {
+    transform: translateZ(var(--z, 0)) translateY(-16px);
+  }
 }
 
 .grid-floor {
   position: absolute;
-  inset: auto 0 -40px 0;
-  height: 240px;
-  transform: rotateX(78deg) translateZ(-60px);
-  transform-origin: bottom center;
+  left: 5%;
+  right: 5%;
+  bottom: 8%;
+  height: 55%;
+  transform: rotateX(75deg) translateZ(-40px);
   background-image:
-    linear-gradient(rgba(34, 211, 238, 0.25) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34, 211, 238, 0.25) 1px, transparent 1px);
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
-  -webkit-mask-image: radial-gradient(ellipse at center, black 0%, transparent 70%);
+    linear-gradient(rgba(34, 211, 238, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(34, 211, 238, 0.1) 1px, transparent 1px);
+  background-size: 36px 36px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 75%);
+  opacity: 0.7;
 }

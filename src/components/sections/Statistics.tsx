@@ -4,7 +4,7 @@ import { Container } from '../ui/Container'
 const stats = [
   { value: '50K+', label: 'Active creators', sub: 'Building with Coder-Z' },
   { value: '2M+', label: 'Projects shipped', sub: 'In production worldwide' },
-  { value: '98%', label: 'Time saved', sub: 'vs traditional dev' },
+  { value: '98%', label: 'Time saved', sub: 'vs traditional web builds' },
   { value: '4.9', label: 'Average rating', sub: 'From 12k+ reviews' },
 ]
 
