@@ -1,17 +1,7 @@
 import { motion } from 'framer-motion'
 import { Container } from '../ui/Container'
 import { FadeUp } from '../ui/FadeUp'
-
-const logos = [
-  'Northwind',
-  'Helix Cloud',
-  'Vertex Labs',
-  'Brightline',
-  'Cascade',
-  'Orbit Pay',
-  'Lumina',
-  'Forgeworks',
-]
+import { trustedBrands } from '../ui/BrandLogos'
 
 export function TrustedBy() {
   return (
@@ -28,17 +18,12 @@ export function TrustedBy() {
           <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-[var(--page-bg)] to-transparent sm:w-24" />
 
           <motion.div
-            className="flex w-max gap-12 sm:gap-16"
+            className="flex w-max items-center gap-14 sm:gap-20"
             animate={{ x: ['0%', '-50%'] }}
             transition={{ duration: 28, repeat: Infinity, ease: 'linear' }}
           >
-            {[...logos, ...logos].map((logo, i) => (
-              <span
-                key={`${logo}-${i}`}
-                className="font-display shrink-0 text-sm font-semibold tracking-[0.08em] text-slate-400/90 uppercase sm:text-base"
-              >
-                {logo}
-              </span>
+            {[...trustedBrands, ...trustedBrands].map((brand, i) => (
+              <brand.Logo key={`${brand.name}-${i}`} />
             ))}
           </motion.div>
         </div>

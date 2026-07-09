@@ -6,8 +6,10 @@ import { Generate } from '../components/sections/Generate'
 import { Features } from '../components/sections/Features'
 import { HowItWorks } from '../components/sections/HowItWorks'
 import { UseCases } from '../components/sections/UseCases'
-import { EnterpriseBenefits } from '../components/sections/EnterpriseBenefits'
+import { EnterpriseSecurity } from '../components/sections/EnterpriseSecurity'
 import { Demo } from '../components/sections/Demo'
+import { GlobalConnectivity } from '../components/sections/GlobalConnectivity'
+import { RoiCalculator } from '../components/sections/RoiCalculator'
 import { Testimonials } from '../components/sections/Testimonials'
 import { Pricing } from '../components/sections/Pricing'
 import { FAQ } from '../components/sections/FAQ'
@@ -24,8 +26,10 @@ export function Home() {
       <DragDropBuilder />
       <Generate />
       <UseCases />
-      <EnterpriseBenefits />
+      <EnterpriseSecurity />
       <Demo />
+      <GlobalConnectivity />
+      <RoiCalculator />
       <Testimonials />
       <Pricing />
       <FAQ />

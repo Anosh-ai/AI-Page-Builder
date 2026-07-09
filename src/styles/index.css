@@ -197,4 +197,35 @@
   .dash-border {
     border-color: var(--color-dash-border);
   }
+
+  .roi-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    border-radius: 9999px;
+    background: linear-gradient(90deg, #22d3ee 0%, #06b6d4 100%);
+    outline: none;
+  }
+
+  .roi-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #22d3ee;
+    box-shadow: 0 2px 8px rgba(34, 211, 238, 0.35);
+    cursor: pointer;
+  }
+
+  .roi-slider::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 2px solid #22d3ee;
+    box-shadow: 0 2px 8px rgba(34, 211, 238, 0.35);
+    cursor: pointer;
+  }
 }
